@@ -12,7 +12,7 @@
         var clientId = 'xxxx';
         var clientSecret = 'xxxx';
     
-        var url = 'https://www.strava.com/oauth/token?client_id=' + clientId + '?client_secret=' + clientSecret + '?code=' + code;
+        var url = 'https://www.strava.com/oauth/token?client_id=' + clientId + '&client_secret=' + clientSecret + '&code=' + code;
     
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
