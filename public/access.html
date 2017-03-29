@@ -9,10 +9,9 @@
         var url = window.location.href;
         var codeIndex = url.search("code");
         var code = url.substring(codeIndex + 5);
-        var clientId = '14088';
-        var clientSecret = '0adc885506a90b63063005e93651299a60d58767';
-        //var urlToPost = 'https://www.strava.com/oauth/token?client_id=14088?client_secret=0adc885506a90b63063005e93651299a60d58767?code=' + code;
-
+        var clientId = 'xxxx';
+        var clientSecret = 'xxxx';
+    
         var url = 'https://www.strava.com/oauth/token?client_id=' + clientId + '?client_secret=' + clientSecret + '?code=' + code;
     
         var xhr = new XMLHttpRequest();
