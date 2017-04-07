@@ -1,7 +1,7 @@
 <p>Access page</p>
-<button onclick="getCode()">Get Code</button>
+
 <script type='text/javascript'>
-    function getCode() {
+    function getUser() {
         
         // var express = require('express');
         // var app = express();
@@ -9,8 +9,8 @@
         var url = window.location.href;
         var codeIndex = url.search("code");
         var code = url.substring(codeIndex + 5);
-        var clientId = 'xxxx';
-        var clientSecret = 'xxxx';
+        var clientId = '14088';
+        var clientSecret = 'xxx';
     
         var url = 'https://www.strava.com/oauth/token?client_id=' + clientId + '&client_secret=' + clientSecret + '&code=' + code;
     
@@ -29,4 +29,7 @@
         //xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
        
     }
+
+window.onload = getUser;
+
 </script>
