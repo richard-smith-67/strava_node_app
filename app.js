@@ -1,7 +1,11 @@
 var strava = require('strava-v3');
 var express = require('express');
 var app = express();
-app.use(express.static('public'))
+var bodyParser = require('body-parser');
+app.use(express.static('public'));
+
+app.use(bodyParser.urlencoded({ extended: false })) 
+app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
     
@@ -20,6 +24,22 @@ app.get('/access', function (req, res) {
   res.sendFile('public/access.html' , { root : __dirname});
   
 });
+
+app.get('/rider/prefs', function (req, res) {
+ 
+  res.sendFile('public/riderPrefs.html' , { root : __dirname});
+  
+});
+
+app.post('/rider/prefs/handler', function (req, res) {
+ 
+  var radius = req.body.groupsWithinRadius;
+  res.send("Groups within " + radius)
+  console.log('yahoo');
+  
+});
+
+
 
 
 // app.get('/athlete', function (req, res) {
