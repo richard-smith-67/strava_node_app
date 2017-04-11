@@ -5,6 +5,7 @@
 <div id="user"></div>
 <div id='firstname'></div>
 <div id='lastname'></div>
+<button onclick="location.href = 'join.html'">Join Group</button>
 
 <script src="https://maps.google.com/maps/api/js?key=AIzaSyAz4oVLZQBBgPKBILGlKdaziIHbqb6jAew"></script>
 
@@ -49,7 +50,7 @@
         var codeIndex = url.search("code");
         var code = url.substring(codeIndex + 5);
         var clientId = '14088';
-        var clientSecret = 'xxx';
+        var clientSecret = 'xxxx';
     
         var url = 'https://www.strava.com/oauth/token?client_id=' + clientId + '&client_secret=' + clientSecret + '&code=' + code;
     

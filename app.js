@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({ extended: false })) 
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
     
@@ -31,7 +31,13 @@ app.get('/rider/prefs', function (req, res) {
   
 });
 
-app.post('/rider/prefs/handler', function (req, res) {
+app.get('/join', function (req, res) {
+ 
+  res.sendFile('/join.html' , { root : __dirname});
+  
+});
+
+app.post('/join/handler', function (req, res) {
  
   var radius = req.body.groupsWithinRadius;
   res.send("Groups within " + radius)
@@ -39,33 +45,7 @@ app.post('/rider/prefs/handler', function (req, res) {
   
 });
 
-
-
-
-// app.get('/athlete', function (req, res) {
- 
-//   strava.athlete.get({id:xxxx},function(err,payload) {
-//     if(!err) {
-//         res.send(payload)
-//     }
-//     else {
-//         console.log(err);
-//     }
-// });
-
- 
-
-//})
-
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
 		
-// strava.athlete.get({id:14088},function(err,payload) {
-//     if(!err) {
-//         console.log(payload);
-//     }
-//     else {
-//         console.log(err);
-//     }
-// });
